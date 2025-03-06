@@ -159,6 +159,11 @@ int parse_string_object(ds_string_slice *slice, object_t *object) {
     tmp_slice.len = 0;
 
     while (*slice->str != end) {
+        if (*slice->str == '\\') {
+            ds_string_slice_step(slice, 1);
+            tmp_slice.len += 1;
+        }
+
         ds_string_slice_step(slice, 1);
         tmp_slice.len += 1;
     }
