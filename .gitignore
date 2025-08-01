@@ -1,4 +1,5 @@
 main
 *.pdf
 *.jpeg
-*.txt
+# *.txt
+build
